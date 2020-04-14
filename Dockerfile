@@ -9,8 +9,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # Instalo las dependencias
 COPY package.json ./
-COPY yarn.lock ./
 RUN npm install react-scripts@2.1.5 -g --silent
+COPY yarn.lock ./
 RUN yarn install --silent
 
 # Agrego el código del proyecto al Workdir
