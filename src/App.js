@@ -7,7 +7,7 @@ class App extends Component {
 
   //<1>
   state = {
-    name: 'World',
+    name: '',
     message: null
   };
 
@@ -17,7 +17,7 @@ class App extends Component {
   //<3>
   getMessage = e => {
     e.preventDefault();
-    fetch(`${SERVER_URL}/${this.state.name}`)
+    fetch(`${SERVER_URL}/hola/${this.state.name}`)
         .then(r => r.text())
         .then(message => this.setState({message}))
         .catch(e => console.error(e))
