@@ -4,9 +4,6 @@ FROM node:8.10.0
 # Defino el workdir
 WORKDIR /app
 
-# Agrego `/app/node_modules/.bin` al $PATH
-#ENV PATH /app/node_modules/.bin:$PATH
-
 # Agrego el código del proyecto al Workdir
 ADD . /app
 
