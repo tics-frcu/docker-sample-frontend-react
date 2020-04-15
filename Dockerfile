@@ -5,16 +5,13 @@ FROM node:8.10.0
 WORKDIR /app
 
 # Agrego `/app/node_modules/.bin` al $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# Instalo las dependencias
-COPY package.json ./
-RUN npm install react-scripts@2.1.5 -g --silent
-COPY yarn.lock ./
-RUN yarn install --silent
+#ENV PATH /app/node_modules/.bin:$PATH
 
 # Agrego el código del proyecto al Workdir
 ADD . /app
+
+# Instalo las dependencias
+RUN yarn install --silent
 
 # El puerto en el que escuchará la app es el 3000
 EXPOSE 3000
